@@ -1,0 +1,19 @@
+db.students.find({ marks: { $gt: 80 } });
+
+db.students.find({ marks: { $lt: 90 } });
+
+db.students.find({ course: { $eq: "BSc IT" } });
+
+db.students.find({
+    $and: [
+        { city: "Navi Mumbai" },
+        { marks: { $gt: 80 } }
+    ]
+});
+
+db.students.find({
+    $or: [
+        { course: "BCA" },
+        { course: "BCom" }
+    ]
+});
