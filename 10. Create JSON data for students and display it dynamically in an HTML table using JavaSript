@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student JSON Data</title>
+</head>
+<body>
+
+    <h2>Student Details</h2>
+
+    <table border="1" id="studentTable">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+        </tr>
+    </table>
+
+    <script>
+        // JSON data
+        let jsonData = `[
+            {
+                "rollNo": 101,
+                "name": "Ayesha",
+                "course": "BSc IT",
+                "marks": 85
+            },
+            {
+                "rollNo": 102,
+                "name": "Rahul",
+                "course": "BSc IT",
+                "marks": 78
+            },
+            {
+                "rollNo": 103,
+                "name": "Sara",
+                "course": "BSc IT",
+                "marks": 91
+            }
+        ]`;
+
+        // Convert JSON string into JavaScript object
+        let students = JSON.parse(jsonData);
+
+        // Get the table
+        let table = document.getElementById("studentTable");
+
+        // Add students to the table
+        for (let student of students) {
+            let row = table.insertRow();
+
+            row.insertCell(0).innerHTML = student.rollNo;
+            row.insertCell(1).innerHTML = student.name;
+            row.insertCell(2).innerHTML = student.course;
+            row.insertCell(3).innerHTML = student.marks;
+        }
+    </script>
+
+</body>
+</html>
