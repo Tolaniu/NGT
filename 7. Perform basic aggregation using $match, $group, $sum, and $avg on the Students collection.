@@ -1,0 +1,29 @@
+use CollegeDB
+
+db.Students.find()
+
+db.Students.aggregate([
+    {
+        $match: {
+            marks: { $gte: 80 }
+        }
+    }
+])
+
+db.Students.aggregate([
+    {
+        $group: {
+            _id: "$course",
+            totalStudents: { $sum: 1 }
+        }
+    }
+])
+
+db.Students.aggregate([
+    {
+        $group: {
+            _id: "$course",
+            averageMarks: { $avg: "$marks" }
+        }
+    }
+])
