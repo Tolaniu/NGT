@@ -1,0 +1,13 @@
+db.students.updateOne(
+    { name: "Ali" },
+    { $set: { marks: 90 } }
+);
+db.students.updateMany(
+    { city: "Mumbai" },
+    { $set: { city: "Navi Mumbai" } }
+);
+
+db.students.deleteOne({ name: "John" });
+db.students.deleteMany({
+    marks: { $lt: 75 }
+});
