@@ -1,0 +1,89 @@
+use CollegeDB
+db.Students.insertMany([
+    {
+        rollNo: 1,
+        name: "Ali",
+        age: 20,
+        gender: "Male",
+        course: "BSc IT",
+        marks: 85,
+        city: "Mumbai"
+    },
+    {
+        rollNo: 2,
+        name: "Sara",
+        age: 21,
+        gender: "Female",
+        course: "BCom",
+        marks: 92,
+        city: "Pune"
+    },
+    {
+        rollNo: 3,
+        name: "John",
+        age: 22,
+        gender: "Male",
+        course: "BCA",
+        marks: 70,
+        city: "Delhi"
+    },
+    {
+        rollNo: 4,
+        name: "Riya",
+        age: 20,
+        gender: "Female",
+        course: "BSc IT",
+        marks: 88,
+        city: "Mumbai"
+    }
+
+
+
+
+    
+])
+
+
+db.Faculty.insertMany([
+    {
+        facultyId: 101,
+        name: "Dr. Sharma",
+        department: "IT",
+        experience: 10
+    },
+    {
+        facultyId: 102,
+        name: "Prof. Patil",
+        department: "Computer Science",
+        experience: 8
+    },
+    {
+        facultyId: 103,
+        name: "Prof. Joshi",
+        department: "Commerce",
+        experience: 6
+    }
+])
+
+db.Courses.insertMany([
+    {
+        courseId: 201,
+        courseName: "BSc IT",
+        duration: "3 Years",
+        fees: 50000
+    },
+    {
+        courseId: 202,
+        courseName: "BCom",
+        duration: "3 Years",
+        fees: 40000
+    },
+    {
+        courseId: 203,
+        courseName: "BCA",
+        duration: "3 Years",
+        fees: 45000
+    }
+])
+show collections
+db.Students.find()
