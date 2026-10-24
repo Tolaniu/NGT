@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student JSON</title>
+</head>
+<body>
+
+    <h2>Student Details</h2>
+    <p id="output"></p>
+
+    <script>
+        let student = {
+            "name": "Ayesha",
+            "rollNo": 101,
+            "course": "BSc IT",
+            "age": 20,
+            "city": "Mumbai",
+            "subjects": ["JSON", "JavaScript", "MongoDB"]
+        };
+
+        // Display name and course
+        let result = "Name: " + student.name + "<br>";
+        result += "Course: " + student.course + "<br>";
+
+        // Display subjects
+        result += "Subjects: ";
+        for (let i in student.subjects) {
+            result += student.subjects[i] + " ";
+        }
+
+        // Modify city
+        student.city = "Pune";
+        result += "<br>New City: " + student.city;
+
+        // Delete age
+        delete student.age;
+
+        document.getElementById("output").innerHTML = result;
+    </script>
+
+</body>
+</html>
