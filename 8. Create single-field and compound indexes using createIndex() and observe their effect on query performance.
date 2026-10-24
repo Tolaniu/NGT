@@ -1,0 +1,34 @@
+use CollegeDB
+
+db.Students.getIndexes()
+
+db.Students.createIndex({
+    marks: 1
+})
+
+db.Students.getIndexes()
+
+
+db.Students.find({
+    marks: { $gte: 80 }
+}).explain("executionStats")
+
+
+db.Students.createIndex({
+    course: 1,
+    marks: -1
+})
+
+db.Students.getIndexes()  
+
+
+db.Students.find({
+    course: "BSc IT",
+    marks: { $gte: 75 }
+}).explain("executionStats")
+
+
+db.Students.find({
+    course: "BSc IT",
+    marks: { $gte: 75 }
+}).explain("executionStats")
