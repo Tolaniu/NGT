@@ -1,0 +1,16 @@
+db.students.find().sort({ marks: 1 });
+
+db.students.find().sort({ marks: -1 });
+
+
+db.students.find().limit(2);
+
+db.students.find(
+    {},
+    {
+        name: 1,
+        course: 1,
+        marks: 1,
+        _id: 0
+    }
+);
